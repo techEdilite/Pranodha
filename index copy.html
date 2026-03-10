@@ -103,13 +103,9 @@
 <!-- ══ HERO ══════════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-bg">
-    <!-- <video autoplay muted loop playsinline>
+    <video autoplay muted loop playsinline>
       <source src="./hero1.mp4" type="video/mp4"/>
-    </video> -->
-    <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto">
-  <source src="./hero1.mp4" type="video/mp4"/>
-</video>
-
+    </video>
   </div>
   <div class="hero-layout">
     <div>
@@ -481,26 +477,6 @@
 function toggleCb(){
   document.getElementById('cbPanel').classList.toggle('open');
 }
-</script>
-
-<script>
-  // iOS autoplay nudge
-  const vid = document.getElementById('heroVideo');
-
-  function tryPlay() {
-    if (vid && vid.paused) {
-      vid.play().catch(() => {});
-    }
-  }
-
-  tryPlay();
-
-  // Try on first user interaction (iOS requirement)
-  document.addEventListener('touchstart', tryPlay, { once: true });
-  document.addEventListener('click', tryPlay, { once: true });
-
-  // Try once page is fully loaded
-  window.addEventListener('load', tryPlay);
 </script>
 
 </body>
